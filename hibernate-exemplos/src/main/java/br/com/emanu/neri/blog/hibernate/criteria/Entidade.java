@@ -1,4 +1,4 @@
-package br.com.emanu.neri.blog.hibernate;
+package br.com.emanu.neri.blog.hibernate.criteria;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
