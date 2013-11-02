@@ -8,6 +8,10 @@ import java.io.InputStream;
 
 import javax.imageio.ImageIO;
 
+/**
+ * @author Emmanuel Neri
+ * http://emanu-neri.blogspot.com.br/
+ */
 public class RedimensionamentoImagem {
 
     private static int tamanhoMaximo = 800;
