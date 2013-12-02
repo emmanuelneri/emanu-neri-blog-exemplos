@@ -1,4 +1,4 @@
-package collections;
+package collections.newCollections;
 
 import com.google.common.collect.Range;
 import com.google.common.collect.RangeSet;
