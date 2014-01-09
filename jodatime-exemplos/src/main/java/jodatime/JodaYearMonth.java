@@ -1,5 +1,8 @@
 package jodatime;
 
+import org.joda.time.Interval;
+import org.joda.time.LocalDate;
+import org.joda.time.Months;
 import org.joda.time.YearMonth;
 
 import java.util.Date;
@@ -32,7 +35,13 @@ public class JodaYearMonth {
 		System.out.println(this.yearMonthJaneiro2014.getMonthOfYear()); // 1
 	}
 
-	private void formatacao() {
-		System.out.println();
+	private void yearMonthToLocalDate() {
+		YearMonth yearMonth = new YearMonth(2014, 1);
+
+		LocalDate dataInicial = yearMonth.toLocalDate(1);
+		LocalDate dataFinal = dataInicial.dayOfMonth().withMaximumValue();
+
+		System.out.println(dataInicial);  //2014-01-01
+		System.out.println(dataFinal);  //2014-01-31
 	}
 }
