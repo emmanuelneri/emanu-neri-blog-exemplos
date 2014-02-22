@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:en="http://java.sun.com/jsf/composite/components">
+
+<h:head>
+    <title>JSF Exemplos</title>
+    <meta content='text/html; charset=UTF-8' http-equiv="Content-Type" />
+</h:head>
+
+<h:body>
+    <h1>JSF Exemplos - Login Componente</h1>
+
+	<div id="compositecomponent">
+		<en:loginPanel controller="#{loginController}"
+					   logar="#{loginController.logar}">
+			<f:validateLength maximum="10" minimum="4" for="validacaoNome" />
+			<f:validateRegex pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,10})"
+							 for="validacaoSenha"/>
+		</en:loginPanel>
+	</div>
+
+
+</h:body>
+
+</html>
