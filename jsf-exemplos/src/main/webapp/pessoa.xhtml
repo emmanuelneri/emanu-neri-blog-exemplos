@@ -1,0 +1,35 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:ui="http://java.sun.com/jsf/facelets"
+				xmlns:h="http://java.sun.com/jsf/html"
+				xmlns:en="http://java.sun.com/jsf/composite/components"
+				xmlns:p="http://java.sun.com/jsf/html"
+				template="/commons/template.xhtml">
+
+	<ui:define name="conteudo">
+
+		<h1>Pessoa</h1>
+
+		<h:form id="formPessoa">
+			<en:input-cpf update=":formPessoa"/>
+
+			<p:panelGroup rendered="#{cpfController.valido}" >
+				<h:panelGrid columns="2" >
+					<h:outputLabel value="Nome: " />
+					<h:inputText value="#{pessoaController.nome}"/>
+
+					<h:outputLabel value="Telefone: " />
+					<h:inputText value="#{pessoaController.telefone}"/>
+
+					<h:outputLabel value="Email: " />
+					<h:inputText value="#{pessoaController.email}"/>
+				</h:panelGrid>
+
+				<p:commandButton value="Salvar" actionListener="#{pessoaController.salvar}"/>
+
+			</p:panelGroup>
+
+		</h:form>
+
+	</ui:define>
+
+</ui:composition>
