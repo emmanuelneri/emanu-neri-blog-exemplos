@@ -5,23 +5,30 @@
 	  xmlns:p="http://primefaces.org/ui" xmlns:f="http://java.sun.com/jsf/core">
 
 <h:head>
-	<title>JSF Exemplos</title>
+	<title>JSF - Bootstrap Exemplos</title>
 	<meta content='text/html; charset=UTF-8' http-equiv="Content-Type" />
+
+	<h:outputStylesheet name="css/bootstrap.min.css" rel="stylesheet" />
+	<h:outputScript name="js/bootstrap.js" />
 </h:head>
 
 <h:body>
-	<h:form>
-		<p:menubar>
-			<p:menuitem value="Home" action="index"/>
-			<p:submenu label="Componentes">
-				<p:menuitem value="Login Panel" action="login?faces-redirect=true"/>
-				<p:menuitem value="CPF Validador" action="pessoa?faces-redirect=true"/>
-				<p:menuitem value="Input Cartão" action="cartao?faces-redirect=true"/>
-			</p:submenu>
-			<p:menuitem value="Bootstrap" action="pages-bootstrap/bootstrap?faces-redirect=true"/>
-		</p:menubar>
 
+	<h:form>
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<a class="brand" href="#">JSF/Bootstrap</a>
+					<ul class="nav">
+						<li>
+							<h:commandLink value="Home" />
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
 	</h:form>
+
 
 	<h:body>
 		<ui:insert name="conteudo" />
