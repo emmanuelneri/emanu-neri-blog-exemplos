@@ -9,24 +9,28 @@
 	<meta content='text/html; charset=UTF-8' http-equiv="Content-Type" />
 
 		<h:outputStylesheet name="css/bootstrap.min.css" rel="stylesheet" />
+		<h:outputScript library="primefaces" name="jquery/jquery.js"/>
 		<h:outputScript name="js/bootstrap.js" />
 </h:head>
 
 <h:body>
-	<nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+		<nav class="navbar  navbar-inverse" role="navigation">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<a class="navbar-brand">JSF / Bootstrap</a>
 			</div>
-				<div class="collapse navbar-collapse">
-					<ul class="nav navbar-nav">
-						<li><h:outputLink value="/">Home</h:outputLink> </li>
-					</ul>
-				</div>
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li><h:outputLink value="/">Home</h:outputLink> </li>
+					<li><h:outputLink value="components.xhtml">Componets</h:outputLink> </li>
+				</ul>
 			</div>
+		</div>
 	</nav>
 
-	<ui:insert name="conteudo" />
+	<div class="container">
+		<ui:insert name="conteudo" />
+	</div>
 
 </h:body>
 

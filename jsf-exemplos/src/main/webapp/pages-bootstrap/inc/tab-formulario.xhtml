@@ -1,0 +1,63 @@
+<ui:composition
+		xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<div class="panel panel-default">
+		<div class="panel-heading">Formulário</div>
+		<div class="panel-body">
+			<div class="input-group">
+				<span class="input-group-addon"></span>
+				<input type="text" class="form-control" placeholder="Nome" />
+				<span class="input-group-addon"></span>
+				<input type="text" class="form-control" placeholder="SobreNome" />
+			</div>
+
+			<br />
+
+			<div class="row">
+				<div class="btn-group ">
+					<div class="btn-group">
+						<button type="button" class="btn btn-default">Masculino</button>
+					</div>
+					<div class="btn-group">
+						<button type="button" class="btn btn-default">Feminino</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">Dados</div>
+
+		<table class="table">
+			<tr>
+				<th>
+					Nome
+				</th>
+				<th>
+					Sobrenome
+				</th>
+				<th>
+					Sexo
+				</th>
+			</tr>
+			<ui:repeat value="#{formularioBootstrapController.pessoas}" var="pessoa">
+				<tr>
+					<td>
+						${pessoa.nome}
+					</td>
+					<td>
+						${pessoa.sobrenome}
+					</td>
+					<td>
+						${pessoa.sexo}
+					</td>
+				</tr>
+			</ui:repeat>
+		</table>
+	</div>
+
+</ui:composition>

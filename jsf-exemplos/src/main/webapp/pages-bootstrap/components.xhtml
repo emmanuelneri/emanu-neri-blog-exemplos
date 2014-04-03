@@ -1,0 +1,53 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:ui="http://java.sun.com/jsf/facelets"
+				xmlns:h="http://java.sun.com/jsf/html"
+				template="/commons/template-bootstrap.xhtml">
+
+	<script>
+		$('#tab a').click(function (e) {
+			e.preventDefault()
+			$(this).tab('show')
+		})
+	</script>
+
+	<ui:define name="conteudo">
+
+		<div class="row">
+
+			<div class="col-xs-12 col-md-10">
+				<h2>Components</h2>
+			</div>
+
+			<div class="col-xs-6 col-md-2">
+				<button type="button" class="btn btn-default btn-group-sm" >
+					<h:outputLink value="bootstrap.xhtml">Voltar</h:outputLink>
+				</button>
+			</div>
+		</div>
+
+		<ul id="tab" class="nav nav-tabs nav-justified">
+			<li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+			<li><a href="#formulario" data-toggle="tab">Formulário</a></li>
+			<li><a href="#outro" data-toggle="tab">Outros</a></li>
+		</ul>
+
+		<div class="tab-content">
+
+			<div id="home" class="tab-pane active">
+				<ui:include src="inc/tab-home.xhtml" />
+			</div>
+
+			<div id="formulario" class="tab-pane">
+				<ui:include src="inc/tab-formulario.xhtml" />
+			</div>
+
+			<div id="outro" class="tab-pane">
+				<ui:include src="inc/tab-outros.xhtml" />
+			</div>
+
+		</div>
+
+
+	</ui:define>
+
+</ui:composition>
