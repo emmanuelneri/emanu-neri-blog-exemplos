@@ -6,29 +6,31 @@
 
 	<div class="panel panel-default">
 		<div class="panel-heading">Formulário</div>
-		<div class="panel-body">
-			<div class="input-group">
-				<span class="input-group-addon"></span>
-				<input type="text" class="form-control" placeholder="Nome" />
-				<span class="input-group-addon"></span>
-				<input type="text" class="form-control" placeholder="SobreNome" />
-			</div>
+			<h:form id="formFormulario">
+				<div class="panel-body">
 
-			<br />
+					<span class="control-label">Nome</span>
+					<h:inputText value="#{formularioBootstrapController.pessoa.nome}" styleClass="form-control" />
 
-			<div class="row">
-				<div class="btn-group ">
-					<div class="btn-group">
-						<button type="button" class="btn btn-default">Masculino</button>
-					</div>
-					<div class="btn-group">
-						<button type="button" class="btn btn-default">Feminino</button>
+					<span class="control-label">Sobrenome</span>
+					<h:inputText value="#{formularioBootstrapController.pessoa.sobrenome}" styleClass="form-control"/>
+
+					<span class="control-label">Sexo</span>
+					<h:selectOneRadio value="#{formularioBootstrapController.pessoa.sexo}" styleClass="form-control">
+						<f:selectItems value="#{formularioBootstrapController.sexos}" />
+					</h:selectOneRadio>
+
+					<div class="text-right" style="padding-top: 15px">
+						<h:commandButton value="Adicionar" actionListener="#{formularioBootstrapController.adicionar}"
+							styleClass="btn bg-primary">
+							<f:ajax event="change" render=":formTable" execute="@this" />
+						</h:commandButton>
 					</div>
 				</div>
-			</div>
+			</h:form>
 		</div>
-	</div>
 
+	<h:form id="formTable">
 	<div class="panel panel-default">
 		<div class="panel-heading">Dados</div>
 
@@ -43,6 +45,9 @@
 				<th>
 					Sexo
 				</th>
+				<th>
+					Remover
+				</th>
 			</tr>
 			<ui:repeat value="#{formularioBootstrapController.pessoas}" var="pessoa">
 				<tr>
@@ -55,9 +60,16 @@
 					<td>
 						${pessoa.sexo}
 					</td>
+					<td>
+						<h:commandButton value="Remover" actionListener="#{formularioBootstrapController.remover}"
+										 styleClass="btn bg-danger">
+							<f:setPropertyActionListener value="#{pessoa}" target="#{formularioBootstrapController.pessoa}" />
+							<f:ajax event="change" render=":formTable :formFormulario" execute="@this" />
+						</h:commandButton>
+					</td>
 				</tr>
 			</ui:repeat>
 		</table>
-	</div>
+	</div> </h:form>
 
 </ui:composition>
