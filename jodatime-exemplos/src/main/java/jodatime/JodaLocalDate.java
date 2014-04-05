@@ -1,6 +1,8 @@
 package jodatime;
 
 import org.joda.time.LocalDate;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 
 import java.util.Locale;
 
@@ -21,6 +23,11 @@ public class JodaLocalDate {
 	private void formatacao() {
 		System.out.println(localDate.toString("dd/MM/YY", new Locale("pt_BR")));  //01/03/12
 		System.out.println(localDate.toString("dd/MMM/YYYY", new Locale("pt_BR"))); //01/Mar/2012
+	}
+
+	public static void main(String args[]) {
+		System.out.println(LocalDate
+				.parse("10/11/2013", DateTimeFormat.forPattern("MMMM, yyyy")));
 	}
 
 }

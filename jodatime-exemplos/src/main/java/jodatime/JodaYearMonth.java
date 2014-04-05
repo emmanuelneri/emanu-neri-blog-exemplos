@@ -1,8 +1,7 @@
 package jodatime;
 
-import org.joda.time.Interval;
+import org.joda.time.IllegalFieldValueException;
 import org.joda.time.LocalDate;
-import org.joda.time.Months;
 import org.joda.time.YearMonth;
 
 import java.util.Date;
@@ -44,4 +43,38 @@ public class JodaYearMonth {
 		System.out.println(dataInicial);  //2014-01-01
 		System.out.println(dataFinal);  //2014-01-31
 	}
+
+
+	public static void main(String args[]) {
+//		try {
+//			System.out.println(new YearMonth(32132131).toString("yyyy/MM"));
+//		} catch (Exception e) {
+//			System.out.println("format");
+//		}
+//
+//
+//
+//		try {
+//			new YearMonth(12, 2332);
+//		}  catch (IllegalFieldValueException e) {
+//			System.out.println("catch");
+//		}
+
+//		YearMonth yearMonth = new YearMonth(2014, 3);
+//
+//			if(yearMonth.getMonthOfYear() >= 4 && yearMonth.getMonthOfYear() <= 12) {
+//				System.out.println(yearMonth.getYear() +"/"+yearMonth.plusYears(1).getYear());
+//			} else {
+//				System.out.println(yearMonth.minusYears(1).getYear() +"/"+ yearMonth.getYear());
+//			}
+
+
+		System.out.println(SACIII.valueOf("x"));
+
+	}
+}
+
+enum SACIII {
+	A,
+	B;
 }
