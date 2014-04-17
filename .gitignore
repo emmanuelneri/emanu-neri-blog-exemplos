@@ -6,6 +6,11 @@
 /javaee-exemplos/target
 /java-exemplos/target
 /jsf-exemplos/target
+/guava-exemplos/target
+/java8/target
+/design-pattern/target
+/jett-exceltarget
+/jodatime-exemplos/target
 
 
 # OS generated files #
