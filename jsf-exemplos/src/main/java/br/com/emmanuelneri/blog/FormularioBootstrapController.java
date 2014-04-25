@@ -13,7 +13,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @ManagedBean
-@SessionScoped
+@ViewScoped
 public class FormularioBootstrapController implements Serializable {
 
 	private List<PessoaVO> pessoas;
@@ -32,9 +32,8 @@ public class FormularioBootstrapController implements Serializable {
 		this.pessoa = new PessoaVO();
 	}
 
-	public void remover() {
-		this.pessoas.remove(pessoa);
-		this.pessoa = new PessoaVO();
+	public void remover(PessoaVO pessoa) {
+		pessoas.remove(pessoa);
 	}
 
 	public List<PessoaVO> getPessoas() {

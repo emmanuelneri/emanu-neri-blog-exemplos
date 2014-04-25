@@ -23,7 +23,7 @@
 					<div class="text-right" style="padding-top: 15px">
 						<h:commandButton value="Adicionar" actionListener="#{formularioBootstrapController.adicionar}"
 							styleClass="btn bg-primary">
-							<f:ajax event="change" render=":formTable" execute="@this" />
+							<f:ajax event="change" render=":formTable :formFormulario" execute="@this" />
 						</h:commandButton>
 					</div>
 				</div>
@@ -61,9 +61,8 @@
 						${pessoa.sexo}
 					</td>
 					<td>
-						<h:commandButton value="Remover" actionListener="#{formularioBootstrapController.remover}"
+						<h:commandButton value="Remover" actionListener="#{formularioBootstrapController.remover(pessoa)}"
 										 styleClass="btn bg-danger">
-							<f:setPropertyActionListener value="#{pessoa}" target="#{formularioBootstrapController.pessoa}" />
 							<f:ajax event="change" render=":formTable :formFormulario" execute="@this" />
 						</h:commandButton>
 					</td>
