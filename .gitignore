@@ -47,3 +47,6 @@ validator-faces-config.NavData
 #IntelliJ
 *.idea
 *iml
+
+#jrebel
+*.rebel.xml
