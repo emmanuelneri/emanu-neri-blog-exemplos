@@ -9,7 +9,7 @@
 /guava-exemplos/target
 /java8/target
 /design-pattern/target
-/jett-exceltarget
+/jett-excel/target
 /jodatime-exemplos/target
 
 
@@ -49,4 +49,4 @@ validator-faces-config.NavData
 *iml
 
 #jrebel
-*.rebel.xml
+rebel.xml
