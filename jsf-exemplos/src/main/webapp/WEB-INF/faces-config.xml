@@ -4,4 +4,8 @@
         http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
               version="2.2">
 
+    <application>
+        <view-handler>br.com.emmanuelneri.blog.filtros.ContadorRestoreViewHandler</view-handler>
+    </application>
+
 </faces-config>
