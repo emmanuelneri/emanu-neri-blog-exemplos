@@ -21,4 +21,12 @@ public class Pessoa {
     public int getIdade() {
         return idade;
     }
+
+    @Override
+    public String toString() {
+        return "Pessoa{" +
+                "nome='" + nome + '\'' +
+                ", idade=" + idade +
+                '}';
+    }
 }

@@ -8,10 +8,6 @@ import java.util.stream.Collectors;
 
 public class Streams {
 
-    public static void main(String args[]) {
-
-    }
-
     public static void filtrarMaioresDeIdade() {
 
         final List<Pessoa> pessoas = criarPessoas();
@@ -28,6 +24,27 @@ public class Streams {
         pessoasMaioresIdade.forEach(System.out::println); //Pessoa 1 Pessoa 2 Pessoa 3
 
     }
+
+    public static void listarIdades() {
+        final List<Pessoa> pessoas = criarPessoas();
+
+        final List<Integer> idades = pessoas.stream()
+                .map(Pessoa::getIdade)
+                .collect(Collectors.toList());
+
+        System.out.println(idades);
+    }
+
+    public static void somaIdades() {
+        final List<Pessoa> pessoas = criarPessoas();
+
+        final int total = pessoas.stream()
+                .mapToInt(Pessoa::getIdade)
+                .sum();
+
+        System.out.println(total);
+    }
+
 
     public static List<Pessoa> criarPessoas() {
         Pessoa pessoa1 = new Pessoa("Pessoa 1", 18);
