@@ -11,7 +11,7 @@
 /design-pattern/target
 /jett-excel/target
 /jodatime-exemplos/target
-
+/cdi/target
 
 # OS generated files #
 .DS_Store
