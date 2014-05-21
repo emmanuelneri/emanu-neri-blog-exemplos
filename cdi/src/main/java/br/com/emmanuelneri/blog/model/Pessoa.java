@@ -1,7 +1,5 @@
 package br.com.emmanuelneri.blog.model;
 
-import com.sun.istack.internal.NotNull;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,7 +12,6 @@ public class Pessoa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
     private String nome;
 
     public Pessoa() {}
