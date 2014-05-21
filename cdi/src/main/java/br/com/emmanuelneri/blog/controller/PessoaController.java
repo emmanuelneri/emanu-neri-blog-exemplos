@@ -3,7 +3,6 @@ package br.com.emmanuelneri.blog.controller;
 import br.com.emmanuelneri.blog.model.Pessoa;
 import br.com.emmanuelneri.blog.service.PessoaService;
 
-import javax.faces.bean.RequestScoped;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -24,10 +23,6 @@ public class PessoaController implements Serializable{
 
     public String salvar() {
         this.pessoaService.salvar(this.pessoa);
-
-        System.out.println(this.pessoa);
-        System.out.println(this.pessoa.getNome());
-        System.out.println(this.pessoa.getId());
 
         return "pessoa";
     }

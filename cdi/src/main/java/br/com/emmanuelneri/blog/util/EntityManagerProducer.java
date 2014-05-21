@@ -5,9 +5,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceUnit;
 
-public final class EntityManagerProducer {
+public class EntityManagerProducer {
 
-    @PersistenceUnit(unitName = "cdiPU")
+    @PersistenceUnit
     private EntityManagerFactory entityManagerFactory;
 
     @Produces
