@@ -1,0 +1,29 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:ui="http://java.sun.com/jsf/facelets"
+				xmlns:h="http://java.sun.com/jsf/html"
+				template="/commons/template.xhtml">
+
+	<ui:define name="conteudo">
+
+        <h:form id="formPerguntas">
+            <ui:repeat id="lista" value="#{perguntaController.perguntas}" var="pergunta">
+
+                <h:outputLabel value="#{pergunta.descricao}" />
+                <h:inputText id="pergunta"/>
+
+            </ui:repeat>
+
+            <br />
+
+            <ui:repeat value="#{perguntaController.perguntas}" var="pergunta" varStatus="status">
+
+                <h:outputLabel value="#{pergunta.descricao}" />
+                <input id="pergunta#{status.index}"/>
+
+            </ui:repeat>
+
+        </h:form>
+
+	</ui:define>
+
+</ui:composition>
