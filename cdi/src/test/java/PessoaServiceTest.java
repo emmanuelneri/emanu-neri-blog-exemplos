@@ -1,7 +1,6 @@
 import br.com.emmanuelneri.blog.model.Pessoa;
 import br.com.emmanuelneri.blog.service.PessoaService;
-import br.com.emmanuelneri.blog.util.EntityManagerProducer;
-import br.com.emmanuelneri.blog.util.GenericService;
+import br.com.emmanuelneri.blog.util.GenericContainerService;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
@@ -20,8 +19,7 @@ public class PessoaServiceTest {
     @Deployment
     public static WebArchive createDeployment() {
         return ShrinkWrap.create(WebArchive.class, "cdi.war")
-                .addPackage(EntityManagerProducer.class.getPackage())
-                .addPackage(GenericService.class.getPackage())
+                .addPackage(GenericContainerService.class.getPackage())
                 .addPackage(PessoaService.class.getPackage())
                 .addPackage(Pessoa.class.getPackage())
                 .addAsResource("META-INF/persistence.xml")
