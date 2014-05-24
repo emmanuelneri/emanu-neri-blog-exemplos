@@ -16,8 +16,7 @@ import java.util.List;
 @Entity
 @NamedQueries({
     @NamedQuery(name = "Produto.findByCodigo",
-        query = "from Produto p,  "
-                + "where :codigo in elements(p.codigos)")
+        query = "from Produto p where :codigo in elements(p.codigos)")
 })
 public class Produto {
 
