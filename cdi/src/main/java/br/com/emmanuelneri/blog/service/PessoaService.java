@@ -1,15 +1,15 @@
 package br.com.emmanuelneri.blog.service;
 
 import br.com.emmanuelneri.blog.model.Pessoa;
-import br.com.emmanuelneri.blog.util.GenericContainerService;
+import br.com.emmanuelneri.blog.util.GenericService;
 
-import javax.ejb.Stateless;
 import javax.inject.Named;
+import javax.transaction.Transactional;
 
-@Stateless
 @Named
-public class PessoaService extends GenericContainerService {
+public class PessoaService extends GenericService {
 
+    @Transactional
     public void salvar(Pessoa pessoa) {
         getEntityManager().persist(pessoa);
     }
