@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xmlComLista>
+    <nome>Teste Lista</nome>
+    <valor>
+        <nome>Teste 1</nome>
+        <valor>10</valor>
+    </valor>
+    <valor>
+        <nome>Teste 2</nome>
+        <valor>20</valor>
+    </valor>
+    <valor>
+        <nome>Teste 1</nome>
+        <valor>30</valor>
+    </valor>
+</xmlComLista>
