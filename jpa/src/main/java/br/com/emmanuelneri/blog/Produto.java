@@ -9,9 +9,12 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.MapKeyColumn;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 
 @Entity
 @NamedQueries({
@@ -30,6 +33,12 @@ public class Produto {
     @CollectionTable(name="produto_codigo", joinColumns = @JoinColumn(name = "id"))
     @Column(name="codigo_produto")
     private List<String> codigos;
+
+    @ElementCollection(fetch = FetchType.EAGER)
+    @MapKeyColumn(name = "locale")
+    @Column(name = "descricao")
+    @CollectionTable(name = "produto_descricao", joinColumns = @JoinColumn(name = "id"))
+    private Map<Locale, String> descricoes;
 
     public Long getId() {
         return id;
