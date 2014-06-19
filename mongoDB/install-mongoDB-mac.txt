@@ -1,0 +1,13 @@
+//extrair .rar em /Applications/mongodb
+
+//Adicionar variavel mongod
+export PATH=/Applications/mongodb/bin:$PATH
+
+//criar diretório
+/data/db/
+
+//liberar permissão
+sudo chmod 777 /data/db/
+
+//iniciar mongoDB
+mongod

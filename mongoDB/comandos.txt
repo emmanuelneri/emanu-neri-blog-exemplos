@@ -1,0 +1,5 @@
+//contecta na banco
+mongo
+
+// troca para database "test"(se não tiver cria)
+use test
