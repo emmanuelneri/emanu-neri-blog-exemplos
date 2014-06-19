@@ -2,16 +2,22 @@ package br.com.emmanuelneri.blog;
 
 import com.sun.istack.internal.NotNull;
 
+import javax.persistence.CascadeType;
 import javax.persistence.CollectionTable;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.MapKeyColumn;
+import javax.persistence.MapKeyEnumerated;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -39,6 +45,12 @@ public class Produto {
     @Column(name = "descricao")
     @CollectionTable(name = "produto_descricao", joinColumns = @JoinColumn(name = "id"))
     private Map<Locale, String> descricoes;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @MapKeyEnumerated(EnumType.STRING)
+    @MapKeyColumn(name = "estado")
+    @JoinTable(name = "produto_fornecedor", joinColumns = @JoinColumn(name = "id_produto"), inverseJoinColumns = @JoinColumn(name = "id_fornecedor"))
+    private Map<Estado, Fornecedor> fornecedores = new HashMap<Estado, Fornecedor>();
 
     public Long getId() {
         return id;
