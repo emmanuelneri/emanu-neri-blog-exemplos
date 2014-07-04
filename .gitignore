@@ -15,6 +15,7 @@
 /jpa/target
 /jaxb/target
 /mongoDB/target
+/shiro/target
 
 # OS generated files #
 .DS_Store
