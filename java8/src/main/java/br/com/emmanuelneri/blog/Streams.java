@@ -4,6 +4,7 @@ import br.com.emmanuelneri.blog.classes.Pessoa;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Streams {
@@ -56,5 +57,16 @@ public class Streams {
         return Arrays.asList(pessoa1, pessoa2, pessoa3, pessoa4, pessoa5);
     }
 
+    public static void transformarLista() {
+        List<Pessoa> pessoas = criarPessoas();
 
+
+        System.out.println(pessoas.stream().map(new Function<Pessoa, String>() {
+            @Override
+            public String apply(Pessoa pessoa) {
+                return pessoa.getNome();
+            }
+        }).collect(Collectors.toList()));
+
+    }
 }
