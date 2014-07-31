@@ -9,11 +9,11 @@
     <h:body>
         <h:form>
             <h:panelGrid columns="2">
-                <h:outputLabel value="Login" />
-                <h:inputText value="#{loginController.login}" name="username" rendered="true"/>
+                <h:outputLabel value="Login: " />
+                <h:inputText value="#{loginController.login}" rendered="true"/>
 
-                <h:outputLabel value="Senha" />
-                <h:inputSecret value="#{loginController.senha}" name="password" rendered="true"/>
+                <h:outputLabel value="Senha: " />
+                <h:inputSecret value="#{loginController.senha}" rendered="true"/>
             </h:panelGrid>
             <h:commandButton value="Login" action="#{loginController.autenticar}"/>
 
