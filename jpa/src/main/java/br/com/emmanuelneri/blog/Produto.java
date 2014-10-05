@@ -17,6 +17,7 @@ import javax.persistence.MapKeyColumn;
 import javax.persistence.MapKeyEnumerated;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -34,6 +35,10 @@ public class Produto {
 
     @NotNull
     private String nome;
+
+    @NotNull
+    @Column(name = "data_cadastro")
+    private LocalDate dataCadastro = LocalDate.now();
 
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name="produto_codigo", joinColumns = @JoinColumn(name = "id"))
