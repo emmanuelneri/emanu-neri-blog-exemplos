@@ -1,0 +1,29 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:ui="http://java.sun.com/jsf/facelets"
+				xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+				template="/commons/template.xhtml">
+
+	<ui:define name="conteudo">
+
+		<h1>Listagem Carros</h1>
+
+		<h:form>
+
+            <p:panel header="Filtros">
+                ...
+            </p:panel>
+
+            <p:panel header="Listagem">
+                <ui:repeat value="#{carroController.carros}" var="carro">
+                    <ui:include src="listagem-carro-tabela.xhtml">
+                        <ui:param name="carro" value="#{carro}" />
+                    </ui:include>
+                </ui:repeat>
+            </p:panel>
+
+		</h:form>
+
+	</ui:define>
+
+</ui:composition>
