@@ -17,6 +17,7 @@ import javax.persistence.MapKeyColumn;
 import javax.persistence.MapKeyEnumerated;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.PrePersist;
 import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
@@ -36,9 +37,8 @@ public class Produto {
     @NotNull
     private String nome;
 
-    @NotNull
     @Column(name = "data_cadastro")
-    private LocalDate dataCadastro = LocalDate.now();
+    private LocalDate dataCadastro;
 
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name="produto_codigo", joinColumns = @JoinColumn(name = "id"))
@@ -56,6 +56,11 @@ public class Produto {
     @MapKeyColumn(name = "estado")
     @JoinTable(name = "produto_fornecedor", joinColumns = @JoinColumn(name = "id_produto"), inverseJoinColumns = @JoinColumn(name = "id_fornecedor"))
     private Map<Estado, Fornecedor> fornecedores = new HashMap<Estado, Fornecedor>();
+
+    @PrePersist
+         public void preSave() {
+        this.dataCadastro = LocalDate.now();
+    }
 
     public Long getId() {
         return id;
